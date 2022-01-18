@@ -9,7 +9,7 @@
     
     <!-- Signature-->
     <!-- <img class="signature" src="assets/handwriting/signature-shadow.png"> -->
-    <img class="signature" src="assets/newheader.png">
+    <img id="signature" src="assets/webtitle-stacked.png">
     <!-- <div class="name">Andrew Cornish<br>Acorn Music</div> -->
 
     <!-- Buttons-->
@@ -24,44 +24,28 @@
     <!-- <img src="assets/andrewgif.gif"> -->
 
     <div id="icon-block">
-        <a class="icons-link" href="https://andrewcornishmusiccom.wordpress.com/"><img class="icons-img" src="assets/icons/www.png"></a>
-        <a class="icons-link" href="mailto:andrew.cornish3@gmail.com"><img class="icons-img" src="assets/icons/email.png"></a>
-        <a class="icons-link" href="https://www.instagram.com/andrewcornishmusic/"><img class="icons-img" src="assets/icons/instagram.png"></a>
+        <a class="icons-link" id="site" href="https://andrewcornishmusiccom.wordpress.com/"><img class="icons-img" src="assets/icons/www.png"></a>
+        <a class="icons-link" id="email" href="mailto:andrew.cornish3@gmail.com"><img class="icons-img" src="assets/icons/email.png"></a>
+        <a class="icons-link" id="instagram" href="https://www.instagram.com/andrewcornishmusic/"><img class="icons-img" src="assets/icons/instagram.png"></a>
     </div>
 
     <div>  
-        <a id="sitesbysam" href="">sitesbysam</a>
+        <a id="sitesbysam" href="https://sitesbysam.github.io">sitesbysam</a>
     </div>
  
 </body>
 
 <style>
-    @font-face {
-        font-family: 'avenir';
-        font-style: normal;
-        font-weight: normal;
-        src: local('body'), url('assets/fonts/Metropolis/Metropolis-Bold.otf') format('woff');
-    }
-
     body {
         background: url("assets/background.jpg");
         /* background-size: 150%; */
         background-position: center;
         color: #fff;
-        font-family: 'Open Sans', sans-serif;
+        font-family: monospace;
         font-size: 15px;
     }
 
-    .portrait {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10%;
-        height: auto;
-        max-width: 100px;
-    }
-
-    .signature {
+    #signature {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -73,7 +57,6 @@
     #button-block {
         padding-bottom: 15px;
     } .buttons {
-        font-family: 'avenir';
         font-weight: bolder;
         text-align: center;
         font-size: 30px;
@@ -127,6 +110,8 @@
         max-width: 75px;
         max-height: 75px;
         margin: 10px;
+        background-image: url(assets/background-blurred.jpg);
+        border-radius: 10px;
     } .icons-img {
         display: block;
         max-width: 75px;
@@ -141,5 +126,20 @@
         text-decoration: none;
     }
 </style>
+
+<script>
+    document.getElementById("signature").onmouseover = function() {mouseOver()};
+    document.getElementById("signature").onmouseout = function() {mouseOut()};
+    
+    function mouseOver() {
+      var sig_img = document.getElementById("signature");
+      sig_img.src = "assets/andrewgif.gif"
+    }
+    
+    function mouseOut() {
+      var sig_img = document.getElementById("signature");
+      sig_img.src = "assets/webtitle-stacked.png"
+    }
+</script>
 
 </html>
