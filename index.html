@@ -1,5 +1,45 @@
 <html lang="en">
 <head>
+    <script>
+        var song = new Audio('assets/music/sample.wav');
+
+        song.onended = function() {
+            song.pause();
+            document.getElementById("header").src = "assets/webtitle-default.png";
+        }
+
+        //Plays the song. Just pass the id of the audio element.
+        function playpause(id){
+
+            if (!song.paused){
+                song.pause();
+                document.getElementById("header").src = "assets/webtitle-default.png";
+            } else {
+                var rand = Math.floor(Math.random() * 5);
+                switch (rand) {
+                    case 0:
+                        document.getElementById("header").src = "assets/webtitle-0.png";
+                        break;
+                    case 1:
+                        document.getElementById("header").src = "assets/webtitle-1.png";
+                        break;
+                    case 2:
+                        document.getElementById("header").src = "assets/webtitle-2.png";
+                        break;
+                    case 3:
+                        document.getElementById("header").src = "assets/webtitle-3.png";
+                        break;
+                    case 4:
+                        document.getElementById("header").src = "assets/webtitle-4.png";
+                        break;
+                    default: 
+                        document.getElementById("header").src = "assets/webtitle-default.png";
+                        break;
+                }
+                song.play();
+            }
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="styles.css"> -->
@@ -9,7 +49,7 @@
     
     <!-- Signature-->
     <!-- <img class="signature" src="assets/handwriting/signature-shadow.png"> -->
-    <img id="signature" src="assets/webtitle-stacked.png">
+    <img onclick="playpause('header')" id="header" src="assets/webtitle-default.png">
     <!-- <div class="name">Andrew Cornish<br>Acorn Music</div> -->
 
     <!-- Buttons-->
@@ -30,7 +70,7 @@
     </div>
 
     <div>  
-        <a id="sitesbysam" href="https://sitesbysam.github.io">sitesbysam</a>
+        <a id="sitesbysam" href="https://sitesbysam.dev">sitesbysam</a>
     </div>
  
 </body>
@@ -45,7 +85,7 @@
         font-size: 15px;
     }
 
-    #signature {
+    #header {
         display: block;
         margin-left: auto;
         margin-right: auto;
