@@ -9,7 +9,7 @@
         }
 
         //Plays the song. Just pass the id of the audio element.
-        function playpause(id){
+        function play_pause(id){
 
             if (!song.paused){
                 song.pause();
@@ -39,18 +39,43 @@
                 song.play();
             }
         }
+
+        function icon_fade(id, state) {
+            switch(id) {
+                case 'website':
+                    if (state) {
+                        document.getElementById(id).src = "assets/icons/website-hover.png";
+                    } else {
+                        document.getElementById(id).src = "assets/icons/website.png";
+                    }
+                    break;
+                case 'email':
+                    if (state) {
+                        document.getElementById(id).src = "assets/icons/email-hover.png";
+                    } else {
+                        document.getElementById(id).src = "assets/icons/email.png";
+                    }
+                    break;
+                case 'instagram':
+                    if (state) {
+                        document.getElementById(id).src = "assets/icons/instagram-hover.png";
+                    } else {
+                        document.getElementById(id).src = "assets/icons/instagram.png";
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <title>Andrew Cornish Music</title>
 </head>
 <body>
     
-    <!-- Signature-->
-    <!-- <img class="signature" src="assets/handwriting/signature-shadow.png"> -->
-    <img onclick="playpause('header')" id="header" src="assets/webtitle-default.png">
-    <!-- <div class="name">Andrew Cornish<br>Acorn Music</div> -->
+    <!-- Header-->
+    <img onclick="play_pause('header')" id="header" src="assets/webtitle-default.png">
 
     <!-- Buttons-->
     <div id="button-block">
@@ -60,12 +85,10 @@
         <a href="https://andrewcornishmusic.bandcamp.com/" class="buttons"><img id="bandcamp" src="assets/buttons/bandcamp.png"></a>
     </div>
 
-    <!-- <img src="assets/andrewgif.gif"> -->
-
     <div id="icon-block">
-        <a class="icons-link" id="site" href="https://andrewcornishmusiccom.wordpress.com/"><img class="icons-img" src="assets/icons/www.png"></a>
-        <a class="icons-link" id="email" href="mailto:andrew.cornish3@gmail.com"><img class="icons-img" src="assets/icons/email.png"></a>
-        <a class="icons-link" id="instagram" href="https://www.instagram.com/andrewcornishmusic/"><img class="icons-img" src="assets/icons/instagram.png"></a>
+        <a class="icons-link" id="website-link" href="https://andrewcornishmusiccom.wordpress.com/"><img class="icons-img" id="website" onmouseenter="icon_fade('website', true)" onmouseleave="icon_fade('website', false)" src="assets/icons/website.png"></a>
+        <a class="icons-link" id="email-link" href="mailto:music@andrewcornish.me"><img id="email" onmouseenter="icon_fade('email', true)" onmouseleave="icon_fade('email', false)" class="icons-img" src="assets/icons/email.png"></a>
+        <a class="icons-link" id="instagram-link" href="https://www.instagram.com/andrewcornishmusic/"><img id="instagram" onmouseenter="icon_fade('instagram', true)" onmouseleave="icon_fade('instagram', false)" class="icons-img" src="assets/icons/instagram.png"></a>
     </div>
 
     <div>  
@@ -160,25 +183,12 @@
     #sitesbysam {
         display: block;
         text-align: center;
+        max-width: fit-content;
         color: rgb(255, 255, 255);
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 15px;
         text-decoration: none;
     }
 </style>
-
-<!-- <script>
-    document.getElementById("signature").onmouseover = function() {mouseOver()};
-    document.getElementById("signature").onmouseout = function() {mouseOut()};
-    
-    function mouseOver() {
-      var sig_img = document.getElementById("signature");
-      sig_img.src = "assets/andrewgif.gif"
-    }
-    
-    function mouseOut() {
-      var sig_img = document.getElementById("signature");
-      sig_img.src = "assets/webtitle-stacked.png"
-    }
-</script> -->
-
 </html>
