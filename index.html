@@ -1,5 +1,63 @@
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" 
+        type="image/png" 
+        href="favicon.png">
+    <title>Andrew Cornish Music</title>
+</head>
+<body>
+    
+    <!-- Header -->
+    <img onclick="play_pause('header')" id="header" src="assets/webtitle-default.png">
+
+    <!-- Trigger/Open The Modal -->
+    <img id="latest-release-button" src="assets/latestrelease0.png"/>
+
+    <!-- The Modal -->
+    <div id="latest-release-modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="latest-release-header" src="assets/latestrelease.png"/>
+            <!-- <h2>Latest Release</h2> -->
+            <!-- <iframe id="latest-release-coverart" style="border: 0; width: 350px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/album=27971770/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless></iframe> -->
+            <img id="latest-release-coverart" src="assets/thefirstquarter.jpg"/>
+            <p id="latest-release-title">The First Quarter</p>
+            <p id="latest-release-title">EP</p>
+            <div class="latest-release-icon-row">
+                <a class="latest-release-links" id="latest-release-spotify" href="https://open.spotify.com/album/2gNmKvhHTYMLEtg0ilJD6L"><img src="assets/icons/spotify.svg"/></a>
+                <a class="latest-release-links" id="latest-release-apple"href="https://music.apple.com/us/album/the-first-quarter-ep/1588452959"><img src="assets/icons/apple-music.svg"/></a>
+            </div>
+            <div class="latest-release-icon-row">
+                <a class="latest-release-links" id="latest-release-youtube"href="https://music.youtube.com/playlist?list=OLAK5uy_mo2vFor8Utao6ljv7P-baIip_gNHuPTJs"><img src="assets/icons/Youtube_Music_icon.svg"/></a>
+                <a class="latest-release-links" id="latest-release-bandcamp"href="https://andrewcornishmusic.bandcamp.com/album/the-first-quarter-ep"><img src="assets/icons/bandcamp-button-bc-circle-aqua-128.png"/></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Buttons -->
+    <div id="button-block">
+        <a href="https://open.spotify.com/artist/4k5xNc8dLAWJemHQv9Wmc1" class="buttons"><img id="spotify" src="assets/buttons/spotify.png"></a>
+        <a href="https://music.apple.com/us/artist/andrew-cornish/1588451912" class="buttons"><img id="apple" src="assets/buttons/apple.png"></a>
+        <a href="https://music.youtube.com/channel/UCDhgRj9d2rL90GQTww4tXRQ" class="buttons"><img id="youtube" src="assets/buttons/youtube.png"></a>
+        <a href="https://andrewcornishmusic.bandcamp.com/" class="buttons"><img id="bandcamp" src="assets/buttons/bandcamp.png"></a>
+    </div>
+
+    <!-- Icons -->
+    <div id="icon-block">
+        <a class="icons-link" id="website-link" href="https://andrewcornishmusiccom.wordpress.com/"><img class="icons-img" id="website" onmouseenter="icon_fade('website', true)" onmouseleave="icon_fade('website', false)" src="assets/icons/website.png"></a>
+        <a class="icons-link" id="email-link" href="mailto:music@andrewcornish.me"><img id="email" onmouseenter="icon_fade('email', true)" onmouseleave="icon_fade('email', false)" class="icons-img" src="assets/icons/email.png"></a>
+        <a class="icons-link" id="instagram-link" href="https://www.instagram.com/andrewcornishmusic/"><img id="instagram" onmouseenter="icon_fade('instagram', true)" onmouseleave="icon_fade('instagram', false)" class="icons-img" src="assets/icons/instagram.png"></a>
+    </div>
+
+    <div>  
+        <a id="sitesbysam" href="https://sitesbysam.dev">sitesbysam</a>
+    </div>
+
     <script>
         var song = new Audio('assets/music/tone2.wav');
 
@@ -68,43 +126,49 @@
             }
         }
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Cornish Music</title>
-</head>
-<body>
-    
-    <!-- Header -->
-    <img onclick="play_pause('header')" id="header" src="assets/webtitle-default.png">
+    <script>
+        // Get the modal
+        var modal = document.getElementById("latest-release-modal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("latest-release-button");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
 
-    <!-- Buttons -->
-    <div id="button-block">
-        <a href="https://open.spotify.com/artist/4k5xNc8dLAWJemHQv9Wmc1" class="buttons"><img id="spotify" src="assets/buttons/spotify.png"></a>
-        <a href="https://music.apple.com/us/artist/andrew-cornish/1588451912" class="buttons"><img id="apple" src="assets/buttons/apple.png"></a>
-        <a href="https://music.youtube.com/channel/UCDhgRj9d2rL90GQTww4tXRQ" class="buttons"><img id="youtube" src="assets/buttons/youtube.png"></a>
-        <a href="https://andrewcornishmusic.bandcamp.com/" class="buttons"><img id="bandcamp" src="assets/buttons/bandcamp.png"></a>
-    </div>
-
-    <!-- Icons -->
-    <div id="icon-block">
-        <a class="icons-link" id="website-link" href="https://andrewcornishmusiccom.wordpress.com/"><img class="icons-img" id="website" onmouseenter="icon_fade('website', true)" onmouseleave="icon_fade('website', false)" src="assets/icons/website.png"></a>
-        <a class="icons-link" id="email-link" href="mailto:music@andrewcornish.me"><img id="email" onmouseenter="icon_fade('email', true)" onmouseleave="icon_fade('email', false)" class="icons-img" src="assets/icons/email.png"></a>
-        <a class="icons-link" id="instagram-link" href="https://www.instagram.com/andrewcornishmusic/"><img id="instagram" onmouseenter="icon_fade('instagram', true)" onmouseleave="icon_fade('instagram', false)" class="icons-img" src="assets/icons/instagram.png"></a>
-    </div>
-
-    <div>  
-        <a id="sitesbysam" href="https://sitesbysam.dev">sitesbysam</a>
-    </div>
- 
+        btn.onmouseenter = function() {
+            btn.src = "assets/latestrelease1.png";
+        }
+        btn.onmouseleave = function() {
+            btn.src = "assets/latestrelease0.png";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+    </script>
 </body>
 
 <style>
     body {
         background: url("assets/background-symmetrical.jpg");
         background-position: center;
-        /* background-size: 90%; */
+        /* background-size: 500%; */
         color: #fff;
-        font-family: monospace;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 15px;
     }
 
@@ -181,6 +245,14 @@
         max-height: 75px;
     }
 
+
+    #spotify-player {
+        display: block;
+        border-radius: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     #sitesbysam {
         display: block;
         text-align: center;
@@ -190,6 +262,104 @@
         margin-right: auto;
         margin-bottom: 15px;
         text-decoration: none;
+    }
+</style>
+<style>
+
+    #latest-release-button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 290px;
+        /* height: 50px; */
+        color: #fff;
+        /* opacity: 0.7; */
+        /* background: rgba(10, 247, 89, 0.445); */
+        /* border-radius: 35px; */
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-image: url("assets/thefirstquarter-blurred.jpg");
+      margin: 15px auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 10px solid rgb(34, 34, 34);
+      width: 300px; /* Could be more or less, depending on screen size */
+      height: 85%;
+
+    }
+    #latest-release-header {
+        display: block;
+        margin-left: 10%;
+        margin-right: auto;
+        max-width: 80%;
+    }
+    #latest-release-coverart {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 65%;
+        max-height: auto;
+        border: 4px solid gray;
+    }
+    .modal-content p {
+        text-align: center;
+        line-height: .4;
+        font-size: 20px;
+    }
+
+    .latest-release-icon-row {
+        display: flex;
+    }
+    .latest-release-links {
+        display: block;
+        margin: auto;
+        width: 35%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        max-height: auto;
+        border-radius: 100px;
+    }
+    #latest-release-spotify, #latest-release-youtube {
+        padding-left: 20px;
+    }
+    #latest-release-apple, #latest-release-bandcamp {
+        padding-right: 20px;
+    }
+    .latest-release-links img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 100px;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
     }
 </style>
 </html>
