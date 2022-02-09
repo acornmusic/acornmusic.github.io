@@ -49,9 +49,26 @@
 
     <!-- Icons -->
     <div id="icon-block">
-        <a class="icons-link" id="website-link" href="https://andrewcornishmusiccom.wordpress.com/"><img class="icons-img" id="website" onmouseenter="icon_fade('website', true)" onmouseleave="icon_fade('website', false)" src="assets/icons/website.png"></a>
-        <a class="icons-link" id="email-link" href="mailto:music@andrewcornish.me"><img id="email" onmouseenter="icon_fade('email', true)" onmouseleave="icon_fade('email', false)" class="icons-img" src="assets/icons/email.png"></a>
-        <a class="icons-link" id="instagram-link" href="https://www.instagram.com/andrewcornishmusic/"><img id="instagram" onmouseenter="icon_fade('instagram', true)" onmouseleave="icon_fade('instagram', false)" class="icons-img" src="assets/icons/instagram.png"></a>
+        <a class="icons-link" id="website-link" href="https://andrewcornishmusiccom.wordpress.com/">
+            <div class="cross-fade">
+                <img class="bottom" id="website-hover" src="assets/icons/website-hover.png">
+                <img class="top" id="website" src="assets/icons/website.png">
+            </div>
+        </a>
+        <a class="icons-link" id="email-link" href="mailto:music@andrewcornish.me">
+            <div class="cross-fade">
+                <img id="email-hover" class="bottom" src="assets/icons/email-hover.png">
+                <img id="email" class="top" src="assets/icons/email.png">
+            </div>
+        </a>
+        <!--<a class="icons-link" id="instagram-link" href="https://www.instagram.com/andrewcornishmusic/"><img id="instagram" onmouseenter="icon_fade('instagram', true)" onmouseleave="icon_fade('instagram', false)" class="icons-img" src="assets/icons/instagram.png"></a>-->
+        <a class="icons-link" id="instagram-link" href="https://www.instagram.com/andrewcornishmusic/">
+            <div class="cross-fade">
+                <img id="instagram-hover" class="bottom" src="assets/icons/instagram-hover.png">
+                <img id="instagram" class="top" src="assets/icons/instagram.png">
+            </div>
+        </a>
+
     </div>
 
     <div>  
@@ -95,34 +112,6 @@
                         break;
                 }
                 song.play();
-            }
-        }
-
-        function icon_fade(id, state) {
-            switch(id) {
-                case 'website':
-                    if (state) {
-                        document.getElementById(id).src = "assets/icons/website-hover.png";
-                    } else {
-                        document.getElementById(id).src = "assets/icons/website.png";
-                    }
-                    break;
-                case 'email':
-                    if (state) {
-                        document.getElementById(id).src = "assets/icons/email-hover.png";
-                    } else {
-                        document.getElementById(id).src = "assets/icons/email.png";
-                    }
-                    break;
-                case 'instagram':
-                    if (state) {
-                        document.getElementById(id).src = "assets/icons/instagram-hover.png";
-                    } else {
-                        document.getElementById(id).src = "assets/icons/instagram.png";
-                    }
-                    break;
-                default:
-                    break;
             }
         }
     </script>
@@ -260,12 +249,37 @@
         max-height: 75px;
         margin: 10px;
         border-radius: 10px;
-    } .icons-img {
+    } 
+    /* The old link image css
+    .icons-img {
         display: block;
+        position: relative;
         max-width: 75px;
         max-height: 75px;
+        opacity: 1.0;
+        transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -webkit-transition: opacity 1s ease-in-out;
     }
+    */
 
+    .cross-fade {
+        position:relative;
+        height:75px;
+        width:75px;
+        margin:0 auto;
+    } .cross-fade img {
+        width: auto;
+        height: 100%;
+        position:absolute;
+        left:0;
+        -webkit-transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -o-transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
+    } .cross-fade img.top:hover {
+        opacity:0;
+    }  
 
     #spotify-player {
         display: block;
